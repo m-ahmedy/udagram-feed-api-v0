@@ -18,15 +18,7 @@ import { FeedItem } from './models/FeedItem';
 
     app.use(bodyParser.json());
 
-    app.use(cors({
-        allowedHeaders: [
-            'Origin', 'X-Requested-With',
-            'Content-Type', 'Accept',
-            'X-Access-Token', 'Authorization',
-        ],
-        methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
-        origin: config.url,
-    }));
+    app.use(cors());
 
     app.get('/health', async (req: Request, res: Response) => {
         // Health check
